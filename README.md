@@ -18,6 +18,7 @@ git clone https://github.com/NMRL/legionella_pneumophila_genomics
 cd legionella_pneumophila_genomics
 bash download_tools.sh
 ```
+- Change full path to legionella_pneumophila_genomics folder in line 11 of qsub_pipeline.sh
 
 ## Running the Pipeline
 ### Interactive mode 
