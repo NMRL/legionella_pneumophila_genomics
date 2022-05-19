@@ -20,6 +20,6 @@ if ( file $1 | grep -q compressed ) ; then
     singularity run image_files/pigz_latest.sif -d $R1_FASTQ $R2_FASTQ
 fi
   
-bash pipeline.sh --reference=supportFiles/Phila_NC_002942.fna --gff=supportFiles/NC_002942.gff --r1=${R1_FASTQ::-3} --r2=${R2_FASTQ::-3} --isolate=$SAMPLE --output=./output
+bash pipeline.sh --reference=supportFiles/Phila_NC_002942.fna --gff=supportFiles/NC_002942.gff --r1=${R1_FASTQ::-3} --r2=${R2_FASTQ::-3} --isolate=$SAMPLE --output=./${SAMPLE}_output
 
 rm -r lpgenomics_temp/
