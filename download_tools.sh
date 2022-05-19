@@ -6,7 +6,7 @@
 ###############################################################################
 
 module load singularity
-cd image_files
+mkdir -m 775 -p image_files/ ; cd image_files
 for i in $(cat ../tools.txt) ; do singularity pull $i ; done
 cd ../
 chmod -R 775 ./
