@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N lpgenomics
-#PBS -l walltime=01:00:00
+#PBS -l walltime=03:00:00
 #PBS -l procs=16
 #PBS -l pmem=2g
 #PBS -q batch
@@ -32,7 +32,7 @@ bash pipeline.sh --reference=supportFiles/Phila_NC_002942.fna --gff=supportFiles
 
 ###CHECKING RACE CONDITION AND PERFORMING CLEANUP
 if ( ! ls lpgenomics_temp/ | grep -q .lock ); then
-    rm -r lpgenomics_temp/
+    rm -r lpgenomics_temp/*
 else
     rm lpgenomics_temp/$SAMPLE.lock
     rm $R1_FASTQ
